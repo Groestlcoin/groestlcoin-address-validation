@@ -1,11 +1,11 @@
 import baseX from 'base-x';
 import bech32 from 'bech32';
-import sha from 'sha.js';
+import groestlhash from 'groestl-hash-js';
 import { Buffer } from 'buffer';
 
 const base58 = baseX('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz');
 
-const sha256 = payload => Buffer.from(sha('sha256').update(payload).digest());
+const groestl = payload => Buffer.from(groestlhash.groestl_2(payload, 1, 1));
 
 const addressTypes = {
   0x00: {
@@ -80,9 +80,9 @@ const validateBtcAddress = (address) => {
   }
 
   let decoded;
-  const prefix = address.substr(0, 2);
+  const prefix = address.substr(0, 4);
 
-  if (prefix === 'bc' || prefix === 'tb') {
+  if (prefix === 'grs' || prefix === 'tgrs') {
     return validateBech32(address);
   }
 
@@ -103,7 +103,7 @@ const validateBtcAddress = (address) => {
   const checksum = decoded.slice(length - 4, length);
   const body = decoded.slice(0, length - 4);
 
-  const expectedChecksum = sha256(sha256(body)).slice(0, 4);
+  const expectedChecksum = groestl(body)).slice(0, 4);
 
   if (!checksum.equals(expectedChecksum)) {
     return false;

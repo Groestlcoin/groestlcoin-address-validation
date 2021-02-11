@@ -33,7 +33,7 @@ export default [
       'base-x',
       'buffer',
       'bech32',
-      'sha.js'
+      'groestl-hash-js'
     ],
     output: [
       { file: pkg.main, format: 'cjs' },

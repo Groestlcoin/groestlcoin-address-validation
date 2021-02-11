@@ -1,14 +1,6 @@
-![](https://ruigomes.me/bitcoin-address-validation.png?v=1)
+# groestlcoin-address-validation
 
-# bitcoin-address-validation
-
-[![Build Status](https://img.shields.io/travis/ruigomeseu/bitcoin-address-validation.svg)](https://travis-ci.org/ruigomeseu/bitcoin-address-validation)
-[![npm version](https://badge.fury.io/js/bitcoin-address-validation.svg)](https://www.npmjs.com/package/bitcoin-address-validation)
-[![David](https://img.shields.io/david/ruigomeseu/bitcoin-address-validation.svg)](https://www.npmjs.com/package/bitcoin-address-validation)
-[![npm](https://img.shields.io/npm/dt/bitcoin-address-validation.svg)](https://www.npmjs.com/package/bitcoin-address-validation)
-[![Twitter Follow](https://img.shields.io/twitter/follow/8bitgomes.svg?style=social)](https://twitter.com/8bitgomes)
-
-Validate Bitcoin addresses - Bech32, P2PKH and P2SH! Available for ES6 and Node.js.
+Validate Groestlcoin addresses - Bech32, P2PKH and P2SH! Available for ES6 and Node.js.
 
 ```js
 validate('bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4');
@@ -22,13 +14,13 @@ validate('bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4');
 ```
 
 ## Installation
-Add `bitcoin-address-validation` to your Javascript project dependencies using Yarn:
+Add `groestlcoin-address-validation` to your Javascript project dependencies using Yarn:
 ```bash
-yarn add bitcoin-address-validation
+yarn add groestlcoin-address-validation
 ```
 Or NPM:
 ```bash
-npm install bitcoin-address-validation --save
+npm install groestlcoin-address-validation --save
 ```
 
 ## Usage
@@ -37,13 +29,13 @@ npm install bitcoin-address-validation --save
 Import using ES6:
 
 ```js
-import validate from 'bitcoin-address-validation';
+import validate from 'groestlcoin-address-validation';
 ```
 
 Or AMD:
 
 ```js
-var validate = require('bitcoin-address-validation');
+var validate = require('groestlcoin-address-validation');
 ```
 
 ### Validating addresses
@@ -91,9 +83,8 @@ This library supports 3 different types of networks: `mainnet`, `testnet` and `r
 
 ## Author
 
-Rui Gomes  
-https://ruigomes.me  
+Forked from https://github.com/ruigomeseu/bitcoin-address-validation
 
 ## License
 
-The MIT License (MIT). Please see [LICENSE file](https://github.com/ruigomeseu/bitcoin-address-validation/blob/master/LICENSE.md) for more information.
+The MIT License (MIT). Please see [LICENSE file](https://github.com/Groestlcoin/groestlcoin-address-validation/blob/master/LICENSE.md) for more information.

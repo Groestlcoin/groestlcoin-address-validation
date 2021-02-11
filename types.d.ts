@@ -1,4 +1,4 @@
-declare module "bitcoin-address-validation" {
+declare module "groestlcoin-address-validation" {
   export enum Network {
     mainnet = "mainnet",
     testnet = "testnet",

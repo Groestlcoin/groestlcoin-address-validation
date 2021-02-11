@@ -82,7 +82,7 @@ const validateBtcAddress = (address) => {
   let decoded;
   const prefix = address.substr(0, 3);
 
-  if (prefix === 'grs' || prefix === 'tgrs') {
+  if (prefix === 'grs') {
     return validateBech32(address);
   }
 

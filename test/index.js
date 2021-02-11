@@ -68,28 +68,28 @@ describe('Validator', () => {
   });
 
   it('validates Testnet Bech32 P2WPKH', () => {
-    const address = 'tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx';
+    const address = 'tgrs1q3uzttcfwdj6g0hx84m3lmxl6xlypxw44mgqtxw';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { bech32: true, type: 'p2wpkh', network: 'testnet' });
   });
 
   it('validates Regtest Bech32 P2WPKH', () => {
-    const address = 'bcrt1q6z64a43mjgkcq0ul2znwneq3spghrlau9slefp';
+    const address = 'grsrt1qsy5cknjmfmuc6vrnlyspk7n48727fcevjhe2t7';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { bech32: true, type: 'p2wpkh', network: 'regtest' });
   });
 
   it('validates Mainnet Bech32 P2WSH', () => {
-    const address = 'bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3';
+    const address = 'grs1qy9ce8yhtgwqxmy3ez6y88yznlndnsfwextdu4gfke5s2gzfn7y4s709qce';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { bech32: true, type: 'p2wsh', network: 'mainnet' });
   });
 
   it('validates Testnet Bech32 P2WSH', () => {
-    const address = 'tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7';
+    const address = 'tgrs1qy9ce8yhtgwqxmy3ez6y88yznlndnsfwextdu4gfke5s2gzfn7y4s4qp78v';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { bech32: true, type: 'p2wsh', network: 'testnet' });
@@ -103,7 +103,7 @@ describe('Validator', () => {
   });
 
   it('fails on invalid Bech32', () => {
-    const address = 'bc1qw508d6qejxtdg4y5r3zrrvary0c5xw7kv8f3t4';
+    const address = 'grs1q509twc95s820qruxx2wm8gyqfgjreasdu354gf';
 
     assert.isFalse(validate(address));
   });
@@ -111,37 +111,37 @@ describe('Validator', () => {
 
 describe('Strict Validator', () => {
   it('validates Mainnet P2PKH', () => {
-    const address = '17VZNX1SN5NtKa8UQFxwQbFeFc3iqRYhem';
+    const address = 'FqLDjQPjguc5SHwM2RxMbX24fsc8WmQoBA';
 
     assert.isTrue(validate(address, 'mainnet'));
   });
 
   it('validates Testnet P2PKH', () => {
-    const address = 'mipcBbFg9gMiCh81Kj8tqqdgoZub1ZJRfn';
+    const address = 'muCVFTRDC6JVHuYx3qupeQ6hraoM8ENGUy';
 
     assert.isTrue(validate(address, 'testnet'));
   });
 
   it('fails on invalid P2PKH', () => {
-    const address = '17VZNX1SN5NtKa8UFFxwQbFeFc3iqRYhem';
+    const address = 'FqLDjQPjguc5SHwMMRxMbX24fsc8WmQoBA';
 
     assert.isFalse(validate(address, 'mainnet'));
   });
 
   it('validates Mainnet P2SH', () => {
-    const address = '3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy';
+    const address = '3B36sX2yoULBTrQhrjzWHrhyvv65zX8Z2a';
 
     assert.isTrue(validate(address, 'mainnet'));
   });
 
   it('validates Testnet P2SH', () => {
-    const address = '2MzQwSSnBHWHqSAqtTVQ6v47XtaisrJa1Vc';
+    const address = '2MyzRukiQBPKpRDzMbKxRQSRVWVMEHozoxR';
 
     assert.isTrue(validate(address, 'testnet'));
   });
 
   it('fails on invalid P2SH', () => {
-    const address = '17VZNX1SN5NtKa8UFFxwQbFFFc3iqRYhem';
+    const address = 'FqLDjQPjguc5SHwMMRxMbX24fsc8WmQoBA';
 
     assert.isFalse(validate(address, 'mainnet'));
   });
@@ -160,8 +160,8 @@ describe('Strict Validator', () => {
 
   it('validates Mainnet Bech32 P2WPKH', () => {
     const addresses = [
-      'bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4',
-      'bc1q973xrrgje6etkkn9q9azzsgpxeddats8ckvp5s',
+      'grs1q509twc95s820qrufx2wm8gyqfgjreasdu354gf',
+      'grs1q6th7xh96acyalv5r2ktejdfqkl4p5l9klq0ftx',
     ];
 
     assert.isTrue(validate(addresses[0], 'mainnet'));
@@ -170,25 +170,25 @@ describe('Strict Validator', () => {
   });
 
   it('validates Testnet Bech32 P2WPKH', () => {
-    const address = 'tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx';
+    const address = 'tgrs1q3uzttcfwdj6g0hx84m3lmxl6xlypxw44mgqtxw';
 
     assert.isTrue(validate(address, 'testnet'));
   });
 
   it('validates Regtest Bech32 P2WPKH', () => {
-    const address = 'bcrt1q6z64a43mjgkcq0ul2znwneq3spghrlau9slefp';
+    const address = 'grsrt1qsy5cknjmfmuc6vrnlyspk7n48727fcevjhe2t7';
 
     assert.isTrue(validate(address, 'regtest'));
   });
 
   it('validates Mainnet Bech32 P2WSH', () => {
-    const address = 'bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3';
+    const address = 'grs1qy9ce8yhtgwqxmy3ez6y88yznlndnsfwextdu4gfke5s2gzfn7y4s709qce';
 
     assert.isTrue(validate(address, 'mainnet'));
   });
 
   it('validates Testnet Bech32 P2WSH', () => {
-    const address = 'tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7';
+    const address = 'tgrs1qy9ce8yhtgwqxmy3ez6y88yznlndnsfwextdu4gfke5s2gzfn7y4s4qp78v';
 
     assert.isTrue(validate(address, 'testnet'));
   });
@@ -200,7 +200,7 @@ describe('Strict Validator', () => {
   });
 
   it('fails on invalid Bech32', () => {
-    const address = 'bc1qw508d6qejxtdg4y5r3zrrvary0c5xw7kv8f3t4';
+    const address = 'grs1q509twc95s820qruxx2wm8gyqfgjreasdu354gf';
 
     assert.isFalse(validate(address, 'mainnet'));
   });

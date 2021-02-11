@@ -8,7 +8,7 @@ const base58 = baseX('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz
 const groestl = payload => Buffer.from(groestlhash.groestl_2(payload, 1, 1));
 
 const addressTypes = {
-  0x00: {
+  0x24: {
     type: 'p2pkh',
     network: 'mainnet'
   },
@@ -80,7 +80,7 @@ const validateBtcAddress = (address) => {
   }
 
   let decoded;
-  const prefix = address.substr(0, 4);
+  const prefix = address.substr(0, 3);
 
   if (prefix === 'grs' || prefix === 'tgrs') {
     return validateBech32(address);

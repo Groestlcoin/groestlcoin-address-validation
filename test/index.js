@@ -3,41 +3,41 @@ const validate = require('../lib/index.cjs.js');
 
 describe('Validator', () => {
   it('validates Mainnet P2PKH', () => {
-    const address = '17VZNX1SN5NtKa8UQFxwQbFeFc3iqRYhem';
+    const address = 'FqLDjQPjguc5SHwM2RxMbX24fsc8WmQoBA';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { type: 'p2pkh', network: 'mainnet', bech32: false });
   });
 
   it('validates Testnet P2PKH', () => {
-    const address = 'mipcBbFg9gMiCh81Kj8tqqdgoZub1ZJRfn';
+    const address = 'muCVFTRDC6JVHuYx3qupeQ6hraoM8ENGUy';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { type: 'p2pkh', network: 'testnet', bech32: false });
   });
 
   it('fails on invalid P2PKH', () => {
-    const address = '17VZNX1SN5NtKa8UFFxwQbFeFc3iqRYhem';
+    const address = 'FqLDjQPjguc5SHwMMRxMbX24fsc8WmQoBA';
 
     assert.isFalse(validate(address));
   });
 
   it('validates Mainnet P2SH', () => {
-    const address = '3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy';
+    const address = '3B36sX2yoULBTrQhrjzWHrhyvv65zX8Z2a';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { type: 'p2sh', network: 'mainnet', bech32: false });
   });
 
   it('validates Testnet P2SH', () => {
-    const address = '2MzQwSSnBHWHqSAqtTVQ6v47XtaisrJa1Vc';
+    const address = '2MyzRukiQBPKpRDzMbKxRQSRVWVMEHozoxR';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { type: 'p2sh', network: 'testnet', bech32: false });
   });
 
   it('fails on invalid P2SH', () => {
-    const address = '17VZNX1SN5NtKa8UFFxwQbFFFc3iqRYhem';
+    const address = 'FqLDjQPjguc5SHwMMRxMbX24fsc8WmQoBA';
 
     assert.isFalse(validate(address));
   });
@@ -56,8 +56,8 @@ describe('Validator', () => {
 
   it('validates Mainnet Bech32 P2WPKH', () => {
     const addresses = [
-      'bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4',
-      'bc1q973xrrgje6etkkn9q9azzsgpxeddats8ckvp5s',
+      'grs1q509twc95s820qrufx2wm8gyqfgjreasdu354gf',
+      'grs1q6th7xh96acyalv5r2ktejdfqkl4p5l9klq0ftx',
     ];
 
     assert.isNotFalse(validate(addresses[0]));

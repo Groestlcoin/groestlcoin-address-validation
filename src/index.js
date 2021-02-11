@@ -39,9 +39,9 @@ const validateBech32 = (address) => {
   }
 
   const prefixesNetwork = {
-    bc: 'mainnet',
-    tb: 'testnet',
-    bcrt: 'regtest'
+    grs: 'mainnet',
+    tgrs: 'testnet',
+    grsrt: 'regtest'
   }
 
   const network = prefixesNetwork[decoded.prefix];

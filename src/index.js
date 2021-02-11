@@ -103,7 +103,7 @@ const validateBtcAddress = (address) => {
   const checksum = decoded.slice(length - 4, length);
   const body = decoded.slice(0, length - 4);
 
-  const expectedChecksum = groestl(body)).slice(0, 4);
+  const expectedChecksum = groestl(body).slice(0, 4);
 
   if (!checksum.equals(expectedChecksum)) {
     return false;

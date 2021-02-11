@@ -96,7 +96,7 @@ describe('Validator', () => {
   });
 
   it('validates Regtest Bech32 P2WSH', () => {
-    const address = 'bcrt1q5n2k3frgpxces3dsw4qfpqk4kksv0cz96pldxdwxrrw0d5ud5hcqzzx7zt';
+    const address = 'grsrt1qmdqzzny25ujs7cdau9kr6et9u8s8wd00jd3qsl6zkhtumtzj845sx8q4m2';
 
     assert.isNotFalse(validate(address));
     assert.include(validate(address), { bech32: true, type: 'p2wsh', network: 'regtest' });
@@ -194,7 +194,7 @@ describe('Strict Validator', () => {
   });
 
   it('validates Regtest Bech32 P2WSH', () => {
-    const address = 'bcrt1q5n2k3frgpxces3dsw4qfpqk4kksv0cz96pldxdwxrrw0d5ud5hcqzzx7zt';
+    const address = 'grsrt1qmdqzzny25ujs7cdau9kr6et9u8s8wd00jd3qsl6zkhtumtzj845sx8q4m2';
 
     assert.isTrue(validate(address, 'regtest'));
   });
